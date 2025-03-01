@@ -38,11 +38,21 @@
         </button>
 
         <script>
-          // Function to handle the button click
+          // Function to generate a random color
+          function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+          }
+
+          // Function to change background color
           document
             .getElementById("colorfulButton")
             .addEventListener("click", function () {
-              alert("Colorful button clicked! 🎨"); // You can replace this with your action
+              document.body.style.backgroundColor = getRandomColor();
             });
         </script>
 
@@ -278,6 +288,14 @@
             taskCountText.innerText = taskCount;
             taskAssignedText.innerText = taskCount;
             completedText.innerText = completedCount;
+
+            // Check if all tasks are completed
+            if (taskCount === 0) {
+              // Show Congrats Alert
+              setTimeout(() => {
+                alert("🎉 Congrats! You have completed all current tasks!");
+              }, 500);
+            }
 
             // Add to Activity Log
             const logEntry = document.createElement("p");
