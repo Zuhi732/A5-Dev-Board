@@ -69,12 +69,19 @@
             </div>
           </div>
           <button
-            onclick="redirectToQuestions()"
+            onclick="redirectToBlog()"
             class="bg-blue-500 text-white p-4 rounded-lg text-center flex items-center gap-2"
           >
             <img src="image/board.png" alt="Discover" class="w-8 h-8" />
             <h2 class="text-lg font-semibold">Discover Something New Today!</h2>
           </button>
+
+          <script>
+            function redirectToBlog() {
+              window.location.href = "blog.html";
+            }
+          </script>
+
           <div
             class="bg-white shadow-lg p-4 rounded-lg flex items-center gap-2 text-center"
           >
